@@ -12,7 +12,9 @@ body {
     background: linear-gradient(rgba(126, 128, 165, 0.6), rgba(205, 206, 211, 0.6)), url(./Img/background-6650672_1920.jpg);
     background-repeat: repeat;
     background-size: 12%;
-    height: 100%;
+    min-height: 100vh;
+    max-width: 100vw;
+
 
 }
 
@@ -45,6 +47,16 @@ input[type="text"] {
     width: 100%;
 
 
+
+
+}
+
+
+
+#estado {
+
+
+    width: 100%;
 
 }
 
@@ -138,11 +150,13 @@ h1 {
     color: rgb(218, 218, 218);
     padding: 20px;
     font-weight: 300;
+
 }
 
 h2 {
     margin-top: 0;
     font-weight: 500;
+
 }
 
 .funcion-agregar {
@@ -304,11 +318,14 @@ h2 {
 .modal2 {
 
 
-
-
-
     width: 40%;
     border: none;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+
+
 
 
 }
@@ -317,7 +334,7 @@ h2 {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 modal1::backdrop,
@@ -385,6 +402,10 @@ modal2::backdrop {
         transform: scale(1);
         background-color: rgba(255, 255, 255, 0.25);
 
+    }
+
+    .input-container {
+        align-items: center;
     }
 
 }
