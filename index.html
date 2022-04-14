@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Tareas</title>
+</head>
+
+<body>
+    <header>
+        <h1>Lista de Tareas</h1>
+
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <h3>Ver</h5>
+                    <li><button class="btn-ver-todas">Todas</button></li>
+                    <li><button class="btn-ver-pendientes">Pendientes</button></li>
+                    <li><button class="btn-ver-progreso">En Progreso</button></li>
+                    <li><button class="btn-ver-finalizadas">Finalizadas</button></li>
+            </ul>
+        </nav>
+        <div class="center-container">
+
+            <div class="funcion-agregar">
+                <p class="fake-btn">Agregar Tarea</p>
+            </div>
+
+            <dialog class="modal1">
+                <div class="agregarTarea">
+                    <form action="" method="dialog" id="form" name="formulario" autocomplete="off">
+                        <div class="input-container">
+                            <h2>Tarea</h2>
+                            <input type="text" id="inputNombreTarea" name="nombreTarea" placeholder="Título..." required
+                                value="">
+                            <input type="text" id="inputDescripcionTarea" name="descripcionTarea"
+                                placeholder="Descripción..." required value="">
+
+                            <label for="estado">Estado:</label>
+                            <select name="estado" id="estado">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="progreso">En progreso</option>
+                                <option value="finalizada">Finalizada</option>
+                            </select>
+                        </div>
+                        <div class="botones">
+                            <button type="submit" class="btnAgregar">Agregar</button>
+                            <button class="btnCancelar">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+
+            <dialog class="modal2">
+                <div class="editarTarea">
+                    <form action="" method="dialog" id="form2" name="formulario2" autocomplete="off">
+                        <div class="input-container">
+                            <h2>Editar Tarea</h2>
+                            <input type="text" id="inputNombreTareaEditar" name="nombreTareaEditar"
+                                placeholder="Título..." required>
+                            <input type="text" id="inputDescripcionTareaEditar" name="descripcionTareaEditar"
+                                placeholder="Descripción..." required>
+
+                            <label for="estadoEditar">Estado:</label>
+                            <select name="estadoEditar" id="estadoEditar">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="progreso">En progreso</option>
+                                <option value="finalizada">Finalizada</option>
+                            </select>
+                        </div>
+                        <div class="botones">
+                            <button type="submit" class="btnAgregar">Editar</button>
+                            <button class="btnCancelarEditar">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+
+            <div class="flex-container"></div>
+        </div>
+    </main>
+</body>
+
+</html>

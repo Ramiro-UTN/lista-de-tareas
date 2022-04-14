@@ -1,0 +1,390 @@
+:root {
+    --estado-tarea: "";
+}
+
+
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(126, 128, 165, 0.6), rgba(205, 206, 211, 0.6)), url(./Img/background-6650672_1920.jpg);
+    background-repeat: repeat;
+    background-size: 12%;
+    height: 100%;
+
+}
+
+main {
+    display: flex;
+
+    min-height: 100vh;
+
+
+}
+
+input[type="text"] {
+    height: 30px;
+    width: 150px;
+}
+
+#inputDescripcionTarea,
+#inputNombreTarea,
+#inputDescripcionTareaEditar,
+#inputNombreTareaEditar {
+
+
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+
+
+
+}
+
+#form,
+#form2 {
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    font-size: 20px;
+    padding-left: 5px;
+
+}
+
+::placeholder {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.btnAgregar,
+.btnCancelar {
+    height: 30px;
+}
+
+
+
+.agregarTarea,
+.editarTarea {
+
+    flex: 1;
+    padding: 20px;
+    display: flex;
+
+
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+nav ul li button {
+    width: 100px;
+    border: none;
+    outline: none;
+    transition: ease-in-out 0.1s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 30px;
+    background-color: hsl(0, 0%, 100%, 0.1);
+    color: rgb(199, 199, 199);
+    border-radius: 3px;
+
+
+
+}
+
+nav ul li button:hover {
+
+    transform: scale(1.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 100%, 0.2);
+    /* background-color: hsl(237, 45%, 29%, 0.9); */
+}
+
+header {
+    background-color: hsl(238, 58%, 21%);
+    height: 80px;
+}
+
+nav {
+    background-color: hsl(237, 45%, 29%, 0.75);
+    color: #FAEDF0;
+    /* padding: 25px; */
+    padding: 1.5%;
+    flex: 1;
+
+
+}
+
+h1 {
+    margin-top: 0;
+    color: rgb(218, 218, 218);
+    padding: 20px;
+    font-weight: 300;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.funcion-agregar {
+    display: flex;
+    background-color: inherit;
+    text-align: center;
+
+    padding: 10px 15px;
+
+}
+
+
+
+
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+
+
+    position: relative;
+}
+
+.flex-container {
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    width: 85%;
+
+    justify-content: flex-start;
+    padding: 15px 0;
+    gap: 33px;
+    align-items: center;
+}
+
+.tarea {
+    width: 95%;
+    /* border:1px solid rgb(185, 183, 183); */
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.tarea:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.tarea::before {
+    /* content: var(--estado-tarea); */
+    content: attr(data-before);
+    position: absolute;
+    bottom: 105%;
+    font-size: 13px;
+
+    color: white;
+    padding: 2px 5px;
+    border-radius: 2px;
+
+    background-color: hsl(238, 58%, 21%);
+
+}
+
+.tituloTarjeta {
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 3px 5px;
+
+
+
+
+
+
+}
+
+.descripcionTarjeta {
+
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    border-radius: 2px;
+    padding: 10px 5px;
+
+    background-color: rgb(0, 0, 0, 0.025);
+
+
+
+
+}
+
+.cerrar,
+.editar {
+
+    color: hsl(237, 45%, 29%, 0.9);
+    padding: 2px;
+    border-radius: 3px;
+
+
+
+}
+
+
+
+.cerrar:hover,
+.editar:hover {
+    cursor: pointer;
+    /* color: rgb(54, 20, 148); */
+    background-color: hsl(0, 0%, 0%, 0.1);
+}
+
+.fake-btn {
+    border-radius: 3px;
+    padding: 10px 15px;
+    /* background-color: hsl(0, 0%, 0%, 0.2); */
+
+    color: rgb(255, 255, 255);
+
+    background-color: hsl(344, 84%, 54%, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+.fake-btn::before {
+    content: "+ ";
+    font-weight: 900;
+}
+
+.fake-btn:hover {
+    /* background-color: hsl(344, 84%, 54%, 0.4); */
+    cursor: pointer;
+    /* color: rgb(224, 223, 223); */
+
+
+
+
+
+
+}
+
+.fake-btn:active {
+    transform: scale(1.04);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+.modal1,
+.modal2 {
+
+
+
+
+
+    width: 40%;
+    border: none;
+
+
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+modal1::backdrop,
+modal2::backdrop {
+    background: rgb(0 0 0, 0.99);
+
+
+
+}
+
+@media only screen and (max-width: 750px) {
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    h3 {
+        display: none;
+    }
+
+    nav {
+        height: 50px;
+        flex: 0;
+        padding: 0;
+        background-color: hsl(0, 0%, 0%, 0.4);
+        padding: 10px;
+
+        /* border-top: .5px solid rgb(133, 132, 132); */
+
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+        border-top: 1px solid rgb(110, 110, 110);
+        border-bottom: 1px solid rgb(121, 121, 121);
+
+    }
+
+    ul {
+
+
+        display: flex;
+
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    li {
+        margin: 0;
+    }
+
+    .fake-btn {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+
+
+
+    nav ul li button:hover {
+        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0.25);
+
+    }
+
+}
