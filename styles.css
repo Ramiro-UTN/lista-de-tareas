@@ -367,6 +367,10 @@ modal2::backdrop {
     main {
         display: flex;
         flex-direction: column;
+
+        /*borrar si empeora en el cel*/
+        height: 100%;
+
     }
 
 
