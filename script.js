@@ -82,9 +82,9 @@ btnCancelarEditar.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
 
     let buscarDescripcion = descripcionTarea.value;
-    console.log(buscarDescripcion)
+
     for (let i = 0; i < arrayTareas.length; i++) {
-        console.log(arrayTareas[i].descripcion)
+
         if (arrayTareas[i].descripcion === buscarDescripcion) {
             alert("Las descripciones deben ser diferentes entre ellas")
             return;
@@ -100,11 +100,28 @@ form.addEventListener('submit', (e) => {
 
     arrayTareas.push(tarea);
 
+    localStorage.tareas = JSON.stringify(arrayTareas);
+
     CrearTareas(tarea);
 
 
 })
 
+window.onload = buscarTarjetasGuardadas;
+
+function buscarTarjetasGuardadas() {
+    let tareasGuardadas = JSON.parse(localStorage.tareas);
+    console.log(tareasGuardadas);
+    if (tareasGuardadas != undefined) {
+        arrayTareas = tareasGuardadas;
+        for (let i = 0; i < tareasGuardadas.length; i++) {
+            CrearTareas(tareasGuardadas[i]);
+        }
+        console.log(arrayTareas);
+    }
+
+
+}
 
 
 function Editar() {
@@ -122,6 +139,11 @@ function Editar() {
             arrayTareas[i].descripcion = nuevaDescripcion;
         }
     }
+
+    //Actualizo las tareas en localStorage
+
+    localStorage.tareas = JSON.stringify(arrayTareas);
+
 
     //Actualizo la lista de tareas creándola de nuevo con los nuevos valores guardados en el array
     borrarTodo();
@@ -204,15 +226,19 @@ function CrearTareas(objeto) {
 
             btnCerrar[i].parentElement.parentElement.parentElement.remove();
 
+            //descripcion de la tarea que queremos borrar
             indiceTareaBorrada = btnCerrar[i].parentElement.parentElement.nextElementSibling.textContent;
 
             for (i = 0; i < arrayTareas.length; i++) {
                 if (indiceTareaBorrada === arrayTareas[i].descripcion) {
                     arrayTareas.splice(i, 1);
+                    //Actualizar el array pasandoselo al localstorage
+                    localStorage.tareas = JSON.stringify(arrayTareas);
                 }
             }
 
         })
+
     }
 
 
